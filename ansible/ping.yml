@@ -1,0 +1,9 @@
+---
+- name: Test Ansible Connectivity
+  hosts: platform
+  gather_facts: false
+
+  tasks:
+
+    - name: Ping EC2
+      ansible.builtin.ping:
