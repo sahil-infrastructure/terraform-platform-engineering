@@ -4,6 +4,7 @@ pipeline {
 
     environment {
         AWS_DEFAULT_REGION = "ap-south-1"
+        EC2_IP = "65.0.101.96"
     }
 
     stages {
@@ -74,16 +75,33 @@ pipeline {
             }
         }
 
+        stage('Deploy Application') {
+            steps {
+
+                sshagent(credentials: ['aws-ec2-key']) {
+
+                    sh """
+                    scp -o StrictHostKeyChecking=no deploy.sh ubuntu@$EC2_IP:/home/ubuntu/
+
+                    ssh -o StrictHostKeyChecking=no ubuntu@$EC2_IP '
+                        chmod +x /home/ubuntu/deploy.sh
+                        /home/ubuntu/deploy.sh
+                    '
+                    """
+                }
+            }
+        }
+
     }
 
     post {
 
         success {
-            echo 'Terraform Infrastructure Pipeline completed successfully.'
+            echo 'Infrastructure and application deployed successfully.'
         }
 
         failure {
-            echo 'Terraform Infrastructure Pipeline failed.'
+            echo 'Pipeline failed.'
         }
 
         always {
