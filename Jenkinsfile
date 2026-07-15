@@ -60,12 +60,6 @@ pipeline {
             }
         }
 
-        stage('Manual Approval') {
-            steps {
-                input message: 'Approve Terraform Apply?'
-            }
-        }
-
         stage('Terraform Apply') {
             steps {
                 withCredentials([
@@ -79,9 +73,11 @@ pipeline {
                 }
             }
         }
+
     }
 
     post {
+
         success {
             echo 'Terraform Infrastructure Pipeline completed successfully.'
         }
