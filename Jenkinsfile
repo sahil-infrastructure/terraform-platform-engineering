@@ -75,22 +75,24 @@ pipeline {
             }
         }
 
-        stage('Deploy Application') {
-            steps {
+        stage('Ansible Ping') {
 
-                sshagent(credentials: ['aws-ec2-key']) {
+		steps {
 
-                    sh """
-                    scp -o StrictHostKeyChecking=no deploy.sh ubuntu@$EC2_IP:/home/ubuntu/
+			sshagent(credentials: ['aws-ec2-key']) {
 
-                    ssh -o StrictHostKeyChecking=no ubuntu@$EC2_IP '
-                        chmod +x /home/ubuntu/deploy.sh
-                        /home/ubuntu/deploy.sh
-                    '
-                    """
-                }
-            }
-        }
+				sh '''
+				mkdir -p ~/.ssh
+
+				ssh-keyscan -H 65.0.101.96 >> ~/.ssh/known_hosts
+
+				ansible-playbook \
+					-i ansible/inventory \
+					ansible/ping.yml
+				'''
+			}
+		}
+	}
 
     }
 
