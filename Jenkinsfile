@@ -55,7 +55,27 @@ pipeline {
                         passwordVariable: 'AWS_SECRET_ACCESS_KEY'
                     )
                 ]) {
-                    sh 'terraform plan'
+                    sh 'terraform plan -out=tfplan'
+                }
+            }
+        }
+
+        stage('Manual Approval') {
+            steps {
+                input message: 'Approve Terraform Apply?'
+            }
+        }
+
+        stage('Terraform Apply') {
+            steps {
+                withCredentials([
+                    usernamePassword(
+                        credentialsId: 'aws-terraform',
+                        usernameVariable: 'AWS_ACCESS_KEY_ID',
+                        passwordVariable: 'AWS_SECRET_ACCESS_KEY'
+                    )
+                ]) {
+                    sh 'terraform apply -auto-approve tfplan'
                 }
             }
         }
@@ -63,11 +83,15 @@ pipeline {
 
     post {
         success {
-            echo 'Terraform pipeline completed successfully.'
+            echo 'Terraform Infrastructure Pipeline completed successfully.'
         }
 
         failure {
-            echo 'Terraform pipeline failed.'
+            echo 'Terraform Infrastructure Pipeline failed.'
+        }
+
+        always {
+            cleanWs()
         }
     }
 }
