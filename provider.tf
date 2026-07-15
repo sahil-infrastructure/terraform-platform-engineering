@@ -11,7 +11,7 @@ terraform {
   backend "s3" {
     bucket = "sahil-terraform-state-548065570271"
     key    = "platform-engineering/terraform.tfstate"
-    region = var.aws_region
+    region = "ap-south-1"
   }
 }
 
