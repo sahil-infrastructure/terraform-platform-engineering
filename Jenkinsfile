@@ -2,6 +2,10 @@ pipeline {
 
     agent any
 
+    environment {
+        AWS_DEFAULT_REGION = "ap-south-1"
+    }
+
     stages {
 
         stage('Checkout') {
@@ -18,7 +22,15 @@ pipeline {
 
         stage('Terraform Init') {
             steps {
-                sh 'terraform init'
+                withCredentials([
+                    usernamePassword(
+                        credentialsId: 'aws-terraform',
+                        usernameVariable: 'AWS_ACCESS_KEY_ID',
+                        passwordVariable: 'AWS_SECRET_ACCESS_KEY'
+                    )
+                ]) {
+                    sh 'terraform init'
+                }
             }
         }
 
@@ -36,18 +48,26 @@ pipeline {
 
         stage('Terraform Plan') {
             steps {
-                sh 'terraform plan'
+                withCredentials([
+                    usernamePassword(
+                        credentialsId: 'aws-terraform',
+                        usernameVariable: 'AWS_ACCESS_KEY_ID',
+                        passwordVariable: 'AWS_SECRET_ACCESS_KEY'
+                    )
+                ]) {
+                    sh 'terraform plan'
+                }
             }
         }
     }
 
     post {
         success {
-            echo 'Terraform validation completed successfully.'
+            echo 'Terraform pipeline completed successfully.'
         }
 
         failure {
-            echo 'Pipeline failed.'
+            echo 'Terraform pipeline failed.'
         }
     }
 }
