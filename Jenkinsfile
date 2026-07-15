@@ -75,7 +75,7 @@ pipeline {
             }
         }
 
-        stage('Ansible Ping') {
+        stage('Deploy using Ansible') {
 
 		steps {
 
@@ -88,7 +88,7 @@ pipeline {
 
 				ansible-playbook \
 					-i ansible/inventory \
-					ansible/ping.yml
+					ansible/deploy.yml
 				'''
 			}
 		}

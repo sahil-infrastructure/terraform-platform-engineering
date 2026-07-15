@@ -1,0 +1,43 @@
+---
+- name: Deploy Docker Application
+  hosts: platform
+  become: true
+
+  vars:
+    image_name: "sahilsinghchib/ecommerce-backend:1.0.0"
+    container_name: "ecommerce-backend"
+
+  tasks:
+
+    - name: Pull latest Docker image
+      community.docker.docker_image:
+        name: "{{ image_name }}"
+        source: pull
+
+    - name: Stop old container
+      community.docker.docker_container:
+        name: "{{ container_name }}"
+        state: stopped
+      ignore_errors: yes
+
+    - name: Remove old container
+      community.docker.docker_container:
+        name: "{{ container_name }}"
+        state: absent
+      ignore_errors: yes
+
+    - name: Start new container
+      community.docker.docker_container:
+        name: "{{ container_name }}"
+        image: "{{ image_name }}"
+        state: started
+        restart_policy: always
+        published_ports:
+          - "80:5000"
+
+    - name: Verify running container
+      shell: docker ps
+      register: docker_output
+
+    - debug:
+        var: docker_output.stdout_lines
