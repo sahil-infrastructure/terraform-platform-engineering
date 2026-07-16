@@ -236,7 +236,7 @@ Shows the application image pushed to Docker Hub for deployment.
 
 ## 📄 Project Cheat Sheet
 
-> *(cheatsheets/docker-cheatsheet.png will be added here.)*
+![Docker Cheat Sheet](cheatsheets/docker-cheatsheet.png)
 
 ### Project Output
 
