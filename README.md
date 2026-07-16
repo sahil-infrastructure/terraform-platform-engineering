@@ -676,6 +676,62 @@ Store State in Remote Backend (S3)
 
 ---
 
+## 📸 Screenshots
+
+### 1. Provider Configuration
+
+Shows the AWS provider configuration used by Terraform.
+
+![Provider](screenshots/terraform/01-provider-tf.png)
+
+---
+
+### 2. Compute Configuration
+
+Shows the EC2 instance configuration managed by Terraform.
+
+![Compute](screenshots/terraform/02-compute-tf.png)
+
+---
+
+### 3. Variables File
+
+Shows the Terraform variables used throughout the project.
+
+![Variables](screenshots/terraform/03-variables-tf.png)
+
+---
+
+### 4. Terraform Plan
+
+Shows Terraform generating the execution plan before infrastructure deployment.
+
+![Terraform Plan](screenshots/terraform/04-terraform-plan.png)
+
+---
+
+### 5. Terraform State List
+
+Shows all AWS resources currently managed by Terraform.
+
+![Terraform State](screenshots/terraform/05-terraform-state-list.png)
+
+---
+
+### 6. Terraform Output
+
+Shows the infrastructure outputs generated after deployment.
+
+![Terraform Output](screenshots/terraform/06-terraform-output.png)
+
+---
+
+## 📄 Project Cheat Sheet
+
+![Terraform Cheat Sheet](cheatsheets/terraform-cheatsheet.png)
+
+---
+
 ### Project Output
 
 - AWS provider configured
