@@ -828,13 +828,6 @@ Shows the playbook used to deploy the Docker application.
 ![Deploy Playbook](screenshots/ansible/02-ansible-deploy-playbook.png)
 
 ---
-
-### 3. Successful Deployment
-
-Shows the successful execution of the Ansible playbook from the Jenkins pipeline.
-
-![Deployment](screenshots/ansible/03-ansible-deployment.png)
-
 ---
 
 ## 📄 Project Cheat Sheet
