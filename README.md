@@ -306,12 +306,63 @@ Ingress
 Application
 ```
 
+---
+
+## 📸 Screenshots
+
+### 1. Running Pods
+
+Shows all application pods created successfully.
+
+![Running Pods](screenshots/kubernetes/01-pods.png)
+
+---
+
+### 2. Deployments
+
+Shows the Deployment managing application replicas.
+
+![Deployments](screenshots/kubernetes/02-deployments.png)
+
+---
+
+### 3. Services
+
+Shows the Kubernetes Service exposing the application.
+
+![Services](screenshots/kubernetes/03-services.png)
+
+---
+
+### 4. StatefulSet
+
+Shows the PostgreSQL StatefulSet created for persistent storage.
+
+![StatefulSet](screenshots/kubernetes/04-statefulsets.png)
+
+---
+
+### 5. Helm
+
+Shows Helm managing Kubernetes packages.
+
+![Helm](screenshots/kubernetes/05-helm.png)
+
+---
+
+## 📄 Project Cheat Sheet
+
+![Kubernetes Cheat Sheet](cheatsheets/kubernetes-cheatsheet.png)
+
+---
+
 ### Project Output
 
 - Deployment created successfully.
 - Pods running successfully.
 - Services exposed successfully.
 - Ingress configured successfully
+
 
 ---
 
