@@ -811,14 +811,35 @@ Verify Deployment
 
 ---
 
-
 ## 📸 Screenshots
 
-| Screenshot | Description |
-|------------|-------------|
-| Docker Images | Shows the Docker image created locally |
-| Running Container | Verifies the Flask container is running |
-| Docker Hub Repository | Confirms the image was pushed successfully |
+### 1. Inventory File
+
+Shows the Ansible inventory used to connect to the EC2 instance.
+
+![Inventory](screenshots/ansible/01-ansible-inventory.png)
+
+---
+
+### 2. Deployment Playbook
+
+Shows the playbook used to deploy the Docker application.
+
+![Deploy Playbook](screenshots/ansible/02-ansible-deploy-playbook.png)
+
+---
+
+### 3. Successful Deployment
+
+Shows the successful execution of the Ansible playbook from the Jenkins pipeline.
+
+![Deployment](screenshots/ansible/03-ansible-deployment.png)
+
+---
+
+## 📄 Project Cheat Sheet
+
+![Ansible Cheat Sheet](cheatsheets/ansible-cheatsheet.png)
 
 ---
 
