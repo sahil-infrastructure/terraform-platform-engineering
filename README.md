@@ -207,7 +207,43 @@ Pull Latest Image
         ▼
 Start Docker Container
 ```
+---
 
+## 📸 Screenshots
+
+### 1. Docker Images
+
+Shows the Docker image created locally before deployment.
+
+![Docker Images](screenshots/docker/01-docker-images.png)
+
+---
+
+### 2. Running Container
+
+Shows the Flask application running inside a Docker container.
+
+![Running Container](screenshots/docker/02-docker-ps.png)
+
+---
+
+### 3. Docker Hub Repository
+
+Shows the application image pushed to Docker Hub for deployment.
+
+![Docker Hub](screenshots/docker/03-dockerhub.png)
+---
+
+## 📄 Project Cheat Sheet
+
+> *(cheatsheets/docker-cheatsheet.png will be added here.)*
+
+### Project Output
+
+- Flask application containerized successfully
+- Docker image built successfully
+- Image pushed to Docker Hub
+- Image deployed automatically on AWS EC2
 ---
 
 ## ☸️ Kubernetes
@@ -547,3 +583,20 @@ Verify Deployment
 - Deployment verified successfully
 
 ---
+
+
+## 📸 Screenshots
+
+| Screenshot | Description |
+|------------|-------------|
+| Docker Images | Shows the Docker image created locally |
+| Running Container | Verifies the Flask container is running |
+| Docker Hub Repository | Confirms the image was pushed successfully |
+
+---
+
+## 📄 Project Cheat Sheet
+
+> *(docker-cheatsheet.png will be added here.)*
+
+
