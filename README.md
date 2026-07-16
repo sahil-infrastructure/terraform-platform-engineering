@@ -31,8 +31,6 @@
   - [AWS](#-aws)
   - [Terraform](#-terraform)
   - [Ansible](#-ansible)
-  - [Prometheus](#-prometheus)
-  - [Grafana](#-grafana)
 - [Screenshots](#-screenshots)
 - [Command Cheat Sheets](#-command-cheat-sheets)
 - [Challenges Faced](#-challenges-faced)
@@ -43,8 +41,7 @@
 
 This project demonstrates the complete lifecycle of building, deploying and automating a containerized application using modern Platform Engineering tools.
 
-The project started with containerizing a Flask application using Docker, followed by orchestrating it with Kubernetes, monitoring it using Prometheus and Grafana, automating infrastructure provisioning with Terraform, and finally deploying the application using Ansible through a Jenkins CI/CD pipeline running on AWS.
-
+The project started with containerizing a Flask application using Docker, followed by orchestrating it with Kubernetes, automating infrastructure provisioning with Terraform, and finally deploying the application using Ansible through a Jenkins CI/CD pipeline running on AWS.
 The primary objective was to understand how each technology fits into a real-world deployment pipeline while building every component from scratch.
 
 ---
@@ -64,9 +61,6 @@ Docker Compose
 Kubernetes Deployment
         │
         ▼
-Prometheus + Grafana Monitoring
-        │
-        ▼
 Jenkins CI/CD
         │
         ▼
@@ -84,7 +78,9 @@ End-to-End Platform Engineering Project
 
 ## 🏗️ Project Architecture
 
-> *(Architecture diagram will be added here.)*
+The following architecture illustrates the complete deployment pipeline implemented in this project, from source code to the running application on AWS.
+
+![Project Architecture](screenshots/architecture/project-architecture.png)
 
 
 ## 🔄 CI/CD Workflow
@@ -836,8 +832,68 @@ Shows the playbook used to deploy the Docker application.
 
 ---
 
-## 📄 Project Cheat Sheet
+---
 
-> *(docker-cheatsheet.png will be added here.)*
+# 🚧 Challenges Faced
+
+During the implementation of this project, several real-world challenges were encountered and resolved.
+
+- Docker image versioning and repository management
+- Kubernetes ImagePullBackOff troubleshooting
+- Service and networking validation
+- Jenkins Docker permissions
+- SSH authentication from Jenkins to AWS EC2
+- Terraform remote backend configuration
+- AWS Security Group and Route Table configuration
+- EC2 provisioning and connectivity troubleshooting
+- Automating Docker deployments using Ansible
+
+Each issue was investigated, debugged and resolved as part of the learning process.
+
+---
+
+# 🎯 Project Outcomes
+
+By completing this project, the following objectives were achieved.
+
+✅ Containerized an application using Docker
+
+✅ Deployed workloads using Kubernetes
+
+✅ Built a production-style Jenkins CI/CD pipeline
+
+✅ Provisioned AWS infrastructure using Terraform
+
+✅ Automated application deployment using Ansible
+
+✅ Configured Terraform Remote State using Amazon S3
+
+✅ Integrated GitHub, Jenkins, Terraform and Ansible into a single deployment workflow
+
+✅ Created reusable documentation, screenshots and technology cheat sheets
+
+✅ Built a complete End-to-End Platform Engineering project from scratch
+
+---
+
+# 📚 Repository Documentation
+
+This repository includes detailed documentation for every technology used throughout the project.
+
+- Architecture Diagram
+- CI/CD Workflow
+- Technology-wise Implementation
+- Runtime Screenshots
+- Command Cheat Sheets
+- Infrastructure Files
+- Troubleshooting Notes
+
+---
+
+# ⭐ Thank You
+
+If you found this project useful, consider giving the repository a ⭐ on GitHub.
+
+Feedback and suggestions are always welcome.
 
 
