@@ -413,6 +413,34 @@ Deployment Completed
 
 ---
 
+## 📸 Screenshots
+
+### 1. Jenkins Pipeline
+
+Shows the successful execution of the complete CI/CD pipeline.
+
+![Jenkins](screenshots/jenkins/01-jenkins-pipeline.png)
+
+---
+
+## 📄 Project Cheat Sheet
+
+![Jenkins Cheat Sheet](cheatsheets/jenkins-cheatsheet.png)
+
+---
+### Project Output
+
+- Jenkins pipeline created successfully
+- GitHub repository integrated
+- Terraform executed automatically
+- Ansible playbook executed automatically
+- Application deployed successfully
+- End-to-End CI/CD pipeline completed
+
+---
+
+---
+
 # ☁️ AWS
 
 ### Purpose in this Project
