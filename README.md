@@ -514,6 +514,98 @@ Ready for Deployment
 
 ---
 
+## 📸 Screenshots
+
+### 1. Custom VPC
+
+Shows the custom VPC created for the project.
+
+**Command Used**
+
+```bash
+aws ec2 describe-vpcs
+```
+
+![Custom VPC](screenshots/aws/01-vpc.png)
+
+---
+
+### 2. S3 Remote Backend
+
+Shows the S3 bucket used to store the Terraform remote state.
+
+**Command Used**
+
+```bash
+aws s3 ls
+```
+
+![S3 Bucket](screenshots/aws/02-s3-bucket.png)
+
+---
+
+### 3. EC2 Instance
+
+Shows the EC2 instance provisioned using Terraform.
+
+**Command Used**
+
+```bash
+aws ec2 describe-instances
+```
+
+![EC2 Instance](screenshots/aws/03-ec2-instance.png)
+
+---
+
+### 4. Security Group
+
+Shows the Security Group allowing SSH and HTTP traffic.
+
+**Command Used**
+
+```bash
+aws ec2 describe-security-groups
+```
+
+![Security Group](screenshots/aws/04-aws-security-group.png)
+
+---
+
+### 5. Route Table
+
+Shows the Route Table associated with the public subnet.
+
+**Command Used**
+
+```bash
+aws ec2 describe-route-tables
+```
+
+![Route Table](screenshots/aws/05-aws-route-table.png)
+
+---
+
+### 6. Running EC2 Instance
+
+Shows the EC2 instance running successfully after infrastructure provisioning.
+
+**Command Used**
+
+```bash
+aws ec2 describe-instances
+```
+
+![Running EC2](screenshots/aws/06-ec2-instance-running.png)
+
+---
+
+## 📄 Project Cheat Sheet
+
+![AWS Cheat Sheet](cheatsheets/aws-cheatsheet.png)
+
+---
+---
 ### Project Output
 
 - Custom VPC created
